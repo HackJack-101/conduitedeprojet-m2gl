@@ -1,1 +1,1 @@
-# conduitedeprojet-m2gl
+# Conduite de Projet M2 Génie Logiciel
