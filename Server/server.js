@@ -66,21 +66,32 @@ app.get('/', function(req, res) {
 
 app.get('/workshops', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.send('{"message":"Liste des ateliers"}');
+  workshopModel.find(function(err, data) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(JSON.stringify(data));
+    }
+  });
 });
 
 app.get('/workshops/:id', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.send('{"message":"Visualiser l\'atelier "' + req.params.id + '}');
+  workshopModel.findById(req.params.id, function(err, data) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(JSON.stringify(data));
+    }
+  });
 });
 
 app.post('/workshops', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var newWorkshop = new workshopModel({"data":"data"});
-
+  var newWorkshop = new workshopModel(req.body);
   newWorkshop.save(function(err) {
     if (err) {
-      handleError(res, err);
+      res.status(500).send(err);
     } else {
       res.send(JSON.stringify(req.body));
     }
@@ -89,13 +100,26 @@ app.post('/workshops', function(req, res) {
 
 app.put('/workshops/:id', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.send('{"message":"Modifier l\'atelier "' + req.params.id + '}');
+  workshopModel.update({_id:req.params.id},req.body,function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(JSON.stringify(req.body));
+    }
+  });
 });
 
 app.delete('/workshops/:id', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.end('{"message":"Supprimer l\'atelier "' + req.params.id + '}');
+  workshopModel.remove({
+    _id: req.params.id
+  }, function(err, data) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(JSON.stringify(data));
+    }
+  });
 });
 
-db.connection.close();
 app.listen(9000);
