@@ -1,0 +1,18 @@
+{
+  "name": "conduitedeprojet-m2gl",
+  "version": "0.0.0",
+  "author": "Hackjack <admin@hackjack.info>",
+  "scripts": {
+    "start": "nodejs server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jack3113/conduitedeprojet-m2gl"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "body-parser": "*"
+  },
+  "license": "None"
+}
