@@ -34,3 +34,5 @@ workshopControllers.controller('WorkshopViewController', function($scope, $http,
     console.log(response)
   });
 });
+
+workshopControllers.controller('WorkshopAddController', function($scope, $http, $routeParams) {});

@@ -1,32 +1,34 @@
-<div layout="row" flex>
-  <table style="width:100%">
-    <thead>
-      <tr>
-        <th>Atelier</th>
-        <th>Type</th>
-        <th>Laboratoire</th>
-        <th>Capacité</th>
-        <th>Durée</th>
-        <th colspan="3">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="workshop in workshops track by workshop._id">
-        <td>{{workshop.title}}</td>
-        <td>{{workshop.type}}</td>
-        <td>{{workshop.laboratory}}</td>
-        <td>{{workshop.capacity}}</td>
-        <td>{{workshop.duration}}</td>
-        <td>
-          <md-button href="#/workshops/view/{{workshop._id}}">Visualiser</md-button>
-        </td>
-        <td>
-          <md-button href="#/workshops/edit/{{workshop._id}}">Modifier</md-button>
-        </td>
-        <td>
-          <md-buttonhref="#/workshops/delete/{{workshop._id}}">Supprimer</md-button>
-        </td>
-      </tr>
+<div layout="column" layout-fill style="padding-bottom: 32px;">
+  <md-whiteframe class="md-whiteframe-z1">
+    <table style="width:100%">
+      <thead>
+        <tr>
+          <th>Atelier</th>
+          <th>Type</th>
+          <th>Laboratoire</th>
+          <th>Capacité</th>
+          <th>Durée</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
       <tbody>
-  </table>
+        <tr ng-repeat="workshop in workshops track by workshop._id">
+          <td>{{workshop.title}}</td>
+          <td>{{workshop.type}}</td>
+          <td>{{workshop.laboratory}}</td>
+          <td>{{workshop.capacity}}</td>
+          <td>{{workshop.duration}} min.</td>
+          <td>
+            <md-button href="#/workshops/view/{{workshop._id}}">Visualiser</md-button>
+          </td>
+          <td>
+            <md-button href="#/workshops/edit/{{workshop._id}}">Modifier</md-button>
+          </td>
+          <td>
+            <md-buttonhref="#/workshops/delete/{{workshop._id}}">Supprimer</md-button>
+          </td>
+        </tr>
+        <tbody>
+    </table>
+  </md-whiteframe>
 </div>

@@ -14,6 +14,10 @@ workshopApp.config(['$routeProvider',
       templateUrl: 'partials/workshops-view.html',
       controller: 'WorkshopViewController'
     }).
+    when('/workshops/add/', {
+      templateUrl: 'partials/workshops-add.html',
+      controller: 'WorkshopAddController'
+    }).
     otherwise({
       redirectTo: '/'
     });
