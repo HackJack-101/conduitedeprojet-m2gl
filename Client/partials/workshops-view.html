@@ -15,19 +15,13 @@
       {{workshop.theme}}
     </div>
     <div>
-      <strong>Description : </strong>
-      {{workshop.description}}
+      <address>
+        <strong>Adresse :</strong>
+        {{workshop.location}}
+      </address>
     </div>
-    <div layout="row">
-      <div>
-        <address>
-          <strong>Adresse :</strong>
-          <p style="padding-left: 1em; ">{{workshop.location}}</p>
-        </address>
-      </div>
-      <div>
-        <a href="{{workshop.website}}">Accéder au site Web</a>
-      </div>
+    <div>
+      <a href="{{workshop.website}}">Accéder au site Web</a>
     </div>
 
     <h3>Informations</h3>
@@ -38,8 +32,8 @@
       <br/>
     </p>
 
-    <h4>Résumé :</h4>
-    <p style="padding-left: 1em;">{{workshop.abstract}}</p>
+    <h4>Description :</h4>
+    <p style="padding-left: 1em;">{{workshop.description}}</p>
 
     <h4>Disciplines abordées :</h4>
     <p style="padding-left: 1em;">{{workshop.topics}}</p>
@@ -55,7 +49,7 @@
     </div>
 
     <h4>Public visé</h4>
-    <div ng-repeat="audience in workshop.speakers" style="padding-left: 1em;"><b>{{speaker}}</b>
+    <div ng-repeat="audience in workshop.audience" style="padding-left: 1em;"><b>{{audience}}</b>
       <br/>
     </div>
 
@@ -65,9 +59,9 @@
 
     <hr/>
     <md-list>
-      <md-list-item class="md-3-line" ng-repeat="timeslot in workshop.timeslots">
+      <md-list-item class="md-3-line" ng-repeat="timeslot in timeslots">
         <div class="md-list-item-text">
-          <p>{{timeslot}}</p>
+          <p>Le {{timeslot.day}}/{{timeslot.month}}/{{timeslot.year}} à {{timeslot.hours}}:{{timeslot.minutes}}</p>
         </div>
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
