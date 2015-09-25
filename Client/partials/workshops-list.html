@@ -10,8 +10,8 @@
         <th colspan="3">Actions</th>
       </tr>
     </thead>
-    <tbody ng-repeat="workshop in workshops track by workshop._id">
-      <tr>
+    <tbody>
+      <tr ng-repeat="workshop in workshops track by workshop._id">
         <td>{{workshop.title}}</td>
         <td>{{workshop.type}}</td>
         <td>{{workshop.laboratory}}</td>
