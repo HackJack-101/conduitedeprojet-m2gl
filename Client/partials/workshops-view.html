@@ -1,0 +1,87 @@
+<div layout="column" layout-fill style="padding-bottom: 32px;">
+  <md-whiteframe class="md-whiteframe-z1">
+
+    <div layout="row" layout-align="center center">
+      <h2>{{workshop.title}}
+        <small> {{workshop.type}}</small>
+      </h2>
+    </div>
+
+    <div>
+      <strong>Laboratoire : </strong>
+      {{workshop.laboratory}}
+    </div>
+
+    <div>
+      <strong>Thème : </strong>
+      {{workshop.theme}}
+    </div>
+
+    <div>
+      <strong>Adresse :</strong>
+      <address>
+        {{workshop.location}}
+      </address>
+    </div>
+
+    <div>
+      <a href="{{workshop.website}}">Accéder au site Web</a>
+    </div>
+
+    <div>
+      <strong>Durée : </strong>
+      {{workshop.duration}} minutes
+    </div>
+
+    <div>
+      <strong>Capacité : </strong>
+      {{workshop.capacity}} personnes
+    </div>
+
+    <div>
+      <strong>Description :</strong>
+      <p style="padding-left: 1em;">{{workshop.description}}</p>
+    </div>
+
+
+    <div>
+      <strong>Disciplines abordées :</strong>
+      <p style="padding-left: 1em;">{{workshop.topics}}</p>
+    </div>
+
+    <div>
+      <strong>Animateur(s) / Conférencier(s) :</strong>
+      <ul>
+        <li ng-repeat="speaker in workshop.speakers">{{speaker}}</li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Partenaire(s) :</strong>
+      <ul>
+        <li ng-repeat="partner in workshop.partners">{{partner}}</li>
+      </ul>
+    </div>
+
+    <div>
+      <strong>Public visé</strong>
+      <ul>
+        <li ng-repeat="audience in workshop.audience">{{audience}}</li>
+      </ul>
+    </div>
+
+    <br/>
+
+    <h3>Plages horaires</h3>
+
+    <hr/>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="timeslot in timeslots">
+        <div class="md-list-item-text">
+          <p>Le {{timeslot.day}}/{{timeslot.month}}/{{timeslot.year}} à {{timeslot.hours}}:{{timeslot.minutes}}</p>
+        </div>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-whiteframe>
+</div>
