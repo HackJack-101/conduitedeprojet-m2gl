@@ -32,6 +32,11 @@ var app = express();
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE');
+  next();
+});
 
 var doc = {
   "message": "Documentation",
@@ -100,7 +105,9 @@ app.post('/workshops', function(req, res) {
 
 app.put('/workshops/:id', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  workshopModel.update({_id:req.params.id},req.body,function(err) {
+  workshopModel.update({
+    _id: req.params.id
+  }, req.body, function(err) {
     if (err) {
       res.status(500).send(err);
     } else {
