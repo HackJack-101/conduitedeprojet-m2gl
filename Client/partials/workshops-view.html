@@ -1,9 +1,9 @@
 <div layout="column" layout-align="center center">
   <div layout="column">
     <div layout="row" layout-align="center center">
-      <h1>{{workshop.title}}
+      <h2>{{workshop.title}}
         <small> {{workshop.type}}</small>
-      </h1>
+      </h2>
     </div>
 
     <div>
@@ -54,14 +54,14 @@
       <br/>
     </div>
 
-    <legend>Public visé</legend>
+    <h4>Public visé</h4>
     <div ng-repeat="audience in workshop.speakers" style="padding-left: 1em;"><b>{{speaker}}</b>
       <br/>
     </div>
 
     <br/>
 
-    <h2>Plages horaires</h2>
+    <h3>Plages horaires</h3>
 
     <hr/>
     <md-list>
