@@ -35,8 +35,6 @@ workshopControllers.controller('WorkshopViewController', function($scope, $http,
   });
 });
 
-workshopControllers.controller('WorkshopAddController', function($scope, $http, $routeParams) {});
-
 workshopControllers.controller('WorkshopEditController', function($scope, $http, $routeParams) {
   $http.get('http://nodejs.hackjack.info/workshops/' + $routeParams.workshopId).
   then(function(response) {
@@ -46,3 +44,5 @@ workshopControllers.controller('WorkshopEditController', function($scope, $http,
     console.log(response)
   });
 });
+
+workshopControllers.controller('WorkshopAddController', function($scope, $http, $routeParams) {});
