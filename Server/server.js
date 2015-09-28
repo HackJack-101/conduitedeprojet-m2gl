@@ -31,10 +31,14 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE');
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
 
@@ -92,13 +96,14 @@ app.get('/workshops/:id', function(req, res) {
 });
 
 app.post('/workshops', function(req, res) {
+  console.log(req.body);
   res.setHeader('Content-Type', 'application/json');
   var newWorkshop = new workshopModel(req.body);
   newWorkshop.save(function(err) {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.send(JSON.stringify(req.body));
+      res.send(req.body);
     }
   });
 });
