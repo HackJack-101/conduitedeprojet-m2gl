@@ -1,0 +1,84 @@
+<div layout="column" layout-fill style="padding-bottom: 32px;">
+  <md-whiteframe class="md-whiteframe-z1">
+
+    <form name="workshopForm" ng-submit="submit()">
+
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Titre de l'atelier</label>
+          <input ng-model="workshop.title">
+        </md-input-container>
+      </div>
+
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Laboratoire</label>
+          <input ng-model="workshop.laboratory">
+        </md-input-container>
+
+        <md-input-container flex>
+          <label>Type</label>
+          <md-select ng-model="workshop.type">
+            <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <md-input-container flex>
+        <label>Adresse</label>
+        <input ng-model="workshop.location">
+      </md-input-container>
+
+      <md-input-container flex>
+        <label>Thème</label>
+        <input ng-model="workshop.theme">
+      </md-input-container>
+
+      <md-input-container flex>
+        <label>Site web</label>
+        <input ng-model="workshop.website">
+      </md-input-container>
+
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Durée (en minutes)</label>
+          <input type="number" ng-model="workshop.duration">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Capacité</label>
+          <input type="number" ng-model="workshop.capacity">
+        </md-input-container>
+      </div>
+
+      <md-input-container flex>
+        <label>Description</label>
+        <textarea ng-model="workshop.description" columns="1"></textarea>
+      </md-input-container>
+
+      <md-input-container flex>
+        <label>Disciplines abordées</label>
+        <input ng-model="workshop.topics">
+      </md-input-container>
+
+      <md-content layout="column">
+        <label>Animateur(s) / Conférencier(s) :</label>
+        <md-chips ng-model="workshop.speakers"></md-chips>
+        <br/>
+
+        <label>Partenaire(s) :</label>
+        <md-chips ng-model="workshop.partners"></md-chips>
+        <br/>
+
+        <label>Public visé :</label>
+        <md-chips ng-model="workshop.audience"></md-chips>
+        <br/>
+
+        <label>Créneaux horaires :</label>
+        <md-chips ng-model="workshop.timeslots" secondary-placeholder="yyyy/mm/dd hh:mm" placeholder="Ajouter une date"></md-chips>
+      </md-content>
+
+      <md-button class="md-raised md-primary" type="submit" id="submit" value="Modifier">Modifier</md-button>
+    </form>
+
+  </md-whiteframe>
+</div>
