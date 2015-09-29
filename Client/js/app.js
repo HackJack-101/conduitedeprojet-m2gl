@@ -15,7 +15,7 @@ workshopApp.config(['$routeProvider',
       controller: 'WorkshopViewController'
     }).
     when('/workshops/add/', {
-      templateUrl: 'partials/workshops-add.html',
+      templateUrl: 'partials/workshops-edit.html',
       controller: 'WorkshopAddController'
     }).
 	when('/workshops/edit/:workshopId', {
