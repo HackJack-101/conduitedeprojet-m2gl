@@ -5,76 +5,76 @@
 
       <div layout layout-sm="column">
         <md-input-container flex>
-          <label>Titre de l'atelier</label>
-          <input ng-model="workshop.title">
+          <label for="title">Titre de l'atelier</label>
+          <input ng-model="workshop.title" id="title">
         </md-input-container>
       </div>
 
       <div layout layout-sm="column">
         <md-input-container flex>
-          <label>Laboratoire</label>
-          <input ng-model="workshop.laboratory">
+          <label for="laboratory">Laboratoire</label>
+          <input ng-model="workshop.laboratory" id="laboratory">
         </md-input-container>
 
         <md-input-container flex>
-          <label>Type</label>
-          <md-select ng-model="workshop.type">
+          <label for="type">Type</label>
+          <md-select ng-model="workshop.type" id="type">
             <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
           </md-select>
         </md-input-container>
       </div>
 
       <md-input-container flex>
-        <label>Adresse</label>
-        <input ng-model="workshop.location">
+        <label for="address">Adresse</label>
+        <input ng-model="workshop.location" id="address">
       </md-input-container>
 
       <md-input-container flex>
-        <label>Thème</label>
-        <input ng-model="workshop.theme">
+        <label for="theme">Thème</label>
+        <input ng-model="workshop.theme" id="theme">
       </md-input-container>
 
       <md-input-container flex>
-        <label>Site web</label>
-        <input ng-model="workshop.website">
+        <label for="website">Site web</label>
+        <input ng-model="workshop.website" id="website">
       </md-input-container>
 
       <div layout layout-sm="column">
         <md-input-container flex>
-          <label>Durée (en minutes)</label>
-          <input type="number" ng-model="workshop.duration">
+          <label for="duration">Durée (en minutes)</label>
+          <input type="number" ng-model="workshop.duration" id="duration">
         </md-input-container>
         <md-input-container flex>
-          <label>Capacité</label>
-          <input type="number" ng-model="workshop.capacity">
+          <label for="capacity">Capacité</label>
+          <input type="number" ng-model="workshop.capacity" id="capacity">
         </md-input-container>
       </div>
 
       <md-input-container flex>
-        <label>Description</label>
-        <textarea ng-model="workshop.description" columns="1"></textarea>
+        <label for="description">Description</label>
+        <textarea ng-model="workshop.description" columns="1" id="description"></textarea>
       </md-input-container>
 
       <md-input-container flex>
-        <label>Disciplines abordées</label>
-        <input ng-model="workshop.topics">
+        <label for="topics">Disciplines abordées</label>
+        <input ng-model="workshop.topics" id="topics">
       </md-input-container>
 
       <md-content layout="column">
-        <label>Animateur(s) / Conférencier(s) :</label>
-        <md-chips ng-model="workshop.speakers"></md-chips>
+        <label for="speakers">Animateur(s) / Conférencier(s) :</label>
+        <md-chips ng-model="workshop.speakers" id="speakers"></md-chips>
         <br/>
 
-        <label>Partenaire(s) :</label>
-        <md-chips ng-model="workshop.partners"></md-chips>
+        <label for="partners">Partenaire(s) :</label>
+        <md-chips ng-model="workshop.partners" id="partners"></md-chips>
         <br/>
 
-        <label>Public visé :</label>
-        <md-chips ng-model="workshop.audience"></md-chips>
+        <label for="audience">Public visé :</label>
+        <md-chips ng-model="workshop.audience" id="audience"></md-chips>
         <br/>
 
-        <label>Créneaux horaires :</label>
-        <md-chips ng-model="workshop.timeslots" secondary-placeholder="yyyy/mm/dd hh:mm" placeholder="yyyy/mm/dd hh:mm"></md-chips>
+        <label for="timeslots">Créneaux horaires :</label>
+        <md-chips ng-model="workshop.timeslots" secondary-placeholder="yyyy/mm/dd hh:mm" placeholder="yyyy/mm/dd hh:mm" id="timeslots"></md-chips>
       </md-content>
 
       <md-button class="md-raised md-primary" type="submit" id="submit" value="Valider">Valider</md-button>
