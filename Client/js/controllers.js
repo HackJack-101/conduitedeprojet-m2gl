@@ -39,7 +39,7 @@ workshopControllers.controller('WorkshopViewController', function($scope, $http,
 });
 
 workshopControllers.controller('WorkshopEditController', function($scope, $http, $routeParams, $location) {
-  $scope.types = ["Conference", "Atelier", "Projection", "Debat"];
+  $scope.types = ["Conférence", "Atelier", "Projection", "Débat"];
   $scope.workshop = {
     "speakers": [],
     "audience": [],
@@ -48,7 +48,7 @@ workshopControllers.controller('WorkshopEditController', function($scope, $http,
   };
   $http.get(server + 'workshops/' + $routeParams.workshopId).
   then(function(response) {
-    $scope.types = ["Conference", "Atelier", "Projection", "Debat"];
+    $scope.types = ["Conférence", "Atelier", "Projection", "Débat"];
     for (var i = 0; i < response.data.timeslots.length; i++) {
       var date = new Date(response.data.timeslots[i])
       response.data.timeslots[i] = date.toLocaleString();
@@ -69,7 +69,7 @@ workshopControllers.controller('WorkshopEditController', function($scope, $http,
 });
 
 workshopControllers.controller('WorkshopAddController', function($scope, $http, $routeParams, $location) {
-  $scope.types = ["Conference", "Atelier", "Projection", "Debat"];
+  $scope.types = ["Conférence", "Atelier", "Projection", "Débat"];
   $scope.workshop = {
     "speakers": [],
     "audience": [],
