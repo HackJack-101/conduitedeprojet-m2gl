@@ -30,14 +30,7 @@ workshopControllers.controller('WorkshopViewController', function($scope, $http,
     $scope.timeslots = [];
     for (var i = 0; i < response.data.timeslots.length; i++) {
       var date = new Date(response.data.timeslots[i]);
-      $scope.timeslots.push({
-        "day": date.getDate() < 10 ? '0' + date.getDate() : date.getDate(),
-        "month": date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth(),
-        "year": date.getFullYear(),
-        "hours": date.getHours() < 10 ? '0' + date.getHours() : date.getHours(),
-        "minutes": date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes(),
-        "seconds": date.getSeconds()
-      });
+      $scope.timeslots.push(date.toLocaleString());
     }
     $scope.workshop = response.data;
   }, function(error) {
@@ -56,6 +49,10 @@ workshopControllers.controller('WorkshopEditController', function($scope, $http,
   $http.get(server + 'workshops/' + $routeParams.workshopId).
   then(function(response) {
     $scope.types = ["Conference", "Atelier", "Projection", "Debat"];
+    for (var i = 0; i < response.data.timeslots.length; i++) {
+      var date = new Date(response.data.timeslots[i])
+      response.data.timeslots[i] = date.toLocaleString();
+    }
     $scope.workshop = response.data;
     $scope.submit = function() {
       $http.put(server + 'workshops/' + $routeParams.workshopId, $scope.workshop)

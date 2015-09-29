@@ -78,7 +78,7 @@
     <md-list>
       <md-list-item class="md-3-line" ng-repeat="timeslot in timeslots">
         <div class="md-list-item-text">
-          <p>Le {{timeslot.day}}/{{timeslot.month}}/{{timeslot.year}} à {{timeslot.hours}}:{{timeslot.minutes}}</p>
+          <p>{{timeslot}}</p>
         </div>
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
