@@ -2,70 +2,71 @@
   <md-whiteframe class="md-whiteframe-z1">
 
     <div layout="row" layout-align="center center">
-      <h2>{{workshop.title}}
-        <small> {{workshop.type}}</small>
-      </h2>
+      <h2 id="title">{{workshop.title}}</h2>
+    </div>
+
+    <div>
+      <strong>Type : </strong>
+      <span id="type">{{workshop.type}}</span>
     </div>
 
     <div>
       <strong>Laboratoire : </strong>
-      {{workshop.laboratory}}
+      <span id="laboratory">{{workshop.laboratory}}</span>
     </div>
 
     <div>
       <strong>Thème : </strong>
-      {{workshop.theme}}
+      <span id="theme">{{workshop.theme}}</span>
     </div>
 
     <div>
       <strong>Adresse :</strong>
-      <address>
-        {{workshop.location}}
-      </address>
+      <address id="location">{{workshop.location}}</address>
     </div>
 
     <div>
-      <a href="{{workshop.website}}">Accéder au site Web</a>
+      <a href="{{workshop.website}}" id="website">Accéder au site Web</a>
     </div>
 
     <div>
       <strong>Durée : </strong>
-      {{workshop.duration}} minutes
+      <span id="duration">{{workshop.duration}}</span> minutes
     </div>
 
     <div>
       <strong>Capacité : </strong>
-      {{workshop.capacity}} personnes
+      <span id="capacity">{{workshop.capacity}}</span> personnes
     </div>
 
     <div>
       <strong>Description :</strong>
-      <p style="padding-left: 1em;">{{workshop.description}}</p>
+      <p style="padding-left: 1em;" id="description">{{workshop.description}}</p>
     </div>
 
 
     <div>
       <strong>Disciplines abordées :</strong>
-      <p style="padding-left: 1em;">{{workshop.topics}}</p>
+      <p style="padding-left: 1em;" id="topics">{{workshop.topics}}</p>
     </div>
 
     <div>
       <strong>Animateur(s) / Conférencier(s) :</strong>
-      <ul>
+      <ul id="speakers">
         <li ng-repeat="speaker in workshop.speakers">{{speaker}}</li>
       </ul>
     </div>
 
     <div>
       <strong>Partenaire(s) :</strong>
-      <ul>
+      <ul id="partners">
         <li ng-repeat="partner in workshop.partners">{{partner}}</li>
       </ul>
     </div>
 
     <div>
       <strong>Public visé</strong>
-      <ul>
+      <ul id="audience">
         <li ng-repeat="audience in workshop.audience">{{audience}}</li>
       </ul>
     </div>
