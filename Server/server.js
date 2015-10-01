@@ -30,6 +30,9 @@ var workshopModel = db.model("Workshop", workshopSchema);
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var connect = require('connect');
+var serveStatic = require('serve-static');
+connect().use(serveStatic(__dirname)).listen(8080);
 
 app.use(bodyParser.urlencoded({
   extended: true
