@@ -12,7 +12,10 @@
   "dependencies": {
     "express": "*",
     "mongoose": "*",
-    "body-parser": "*"
+    "body-parser": "*",
+    "protractor": ">=2.0.0",
+    "jasmine-reporters": ">=1.0.2",
+    "phantomjs": ">=1.9.16"
   },
   "license": "None"
 }
