@@ -1,7 +1,7 @@
-var url = 'http://';
+var url = 'http://test.hackjack.info/';
 var urlWorkshopList = url + '';
 var urlWorkshopEdit = url + '#/workshops/add/';
-    
+
 function genRandomInt(min, max){
     return Math.floor(Math.random() * (max - min)) + max;
 }
@@ -9,10 +9,10 @@ function genRandomInt(min, max){
 function genRandomString(maxLen = 5){
     var res  = '';
     var i;
-    
+
     for ( i = 0; i < maxLen; ++i )
 	res = res + Math.floor(Math.random() * (25)) + 122;
-    
+
     return res;
 }
 
@@ -42,13 +42,13 @@ describe('Workshop list', function() {
  * Fill fields input with random values => save $title, etc.
  * Select options on selectors
  * Submit form => Expect Table with elements $title, etc.
- * Click on button 'Visualiser' => Expect elements with $title, etc.  
+ * Click on button 'Visualiser' => Expect elements with $title, etc.
  */
 describe('Fill fields, submit form, then click \'Visualiser\'', function() {
     it('should fill and save fields, then submit', function() {
 	browser.get(urlWorkshopEdit);
 
-	
+
 	var editInputIDs = [ 'title', 'laboratory',
 			     'address', 'theme',
 			     'website', 'duration',
@@ -102,6 +102,6 @@ describe('Fill fields, submit form, then click \'Visualiser\'', function() {
 	for ( i = 0; i < editInputValues.length; ++i ){
 	    expect(by.id(editInputIDs[i]).getText() == editInputValues[i]);
 	}
-	
+
     });
 });
