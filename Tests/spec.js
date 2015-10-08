@@ -102,4 +102,49 @@ describe('Workshop list', function() {
     }
 
   });
+
+
+
+/*
+ * Scenario 4 : Clicking 'Modifier' 
+                change fields and save changes
+		subit form
+		clict on 'visualiser' => Expect changes done 
+ */
+	it('Delete a the first line', function() {
+	    browser.get(urlWorkshopList);
+	    var line = element.all(by.tagName("table")).get(0);
+	    var id = line.id;
+	    var title = line.title;
+	    
+	    var size = Math.random()+1;
+	    var tabWord = [];
+	    while(size>1) {
+	    tab.push(Math.floor(Math.random() * (122-65))+65);
+	    }     
+	    line.change.click(); // not sure
+	    
+	    line.title.sendKeys(tab.toString());
+	    expect(browser.get(url+'#workhop'+id).title).toEqual(title);        
+	    
+	});
+
+
+
+
+/*
+ * Scenario 5 : Clicking 'Supprimer' should remove index choosen
+ */
+	it('Delete a the first line', function() {
+	    browser.get(urlWorkshopList);
+	    var line = element.all(by.tagName("table")).get(0);
+	    var id = line.id;
+	    line.del.click(); // not sure
+	   expect(browser.get(url+'#workhop'+id)).toEqual("http://.../404.html");
+	    
+	});
+
+
+
+
 });
